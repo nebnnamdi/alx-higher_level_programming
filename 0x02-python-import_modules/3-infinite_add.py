@@ -8,8 +8,8 @@ def add_arg(argv):
         i = 1
         add = 0
         while i <= n
-        add += int(argv[i])
-        i += 1
+            add += int(argv[i])
+            i += 1
         print("{:d}".format(add))
 
 if __name__ == "__main__":
