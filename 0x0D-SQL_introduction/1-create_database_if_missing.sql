@@ -1,2 +1,2 @@
--- script that deletes a database if the database doesnt exist, the script should not fail
-DROP TABLE EXISTS hbtn_0c_0;
+-- script that creates a database if the database doesnt exist, the script should not fail
+CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
