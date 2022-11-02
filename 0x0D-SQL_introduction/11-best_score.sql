@@ -1,2 +1,2 @@
--- a script that updates the score of Bob to 10 in the table second_table
-UPDATE second_table SET score = 10 WHERE name = 'Bob';
+-- a script that lists all records with a score >= 10 in the table order by score
+SELECT score, name FROM second_table WHERE score >= 10 ORDER BY score DESC;
