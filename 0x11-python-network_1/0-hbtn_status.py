@@ -2,17 +2,15 @@
 """A script that
 fetches https://intranet.hbtn.io/status
 """
-import requests
-from sys import argv
+import urllib.request
 
 
 if __name__ == "__main__":
-    url = 'https://api.github.com/user'
-    user = argv[1]
-    pwd = argv[2]
-    req = requests.get(url, auth=(user, pwd))
-    if (req.status_code == 200):
-        user_json = req.json()
-        print(user_json['id'])
-    else:
-        print("None")
+    req = urllib.request.Request('https://intranet.hbtn.io/status')
+    with urllib.request.urlopen(req) as response:
+        body_page = response.read()
+        body_decoded = body_page.decode('utf-8')
+        print("Body response:")
+        print("\t- type: {}".format(type(body_page)))
+        print("\t- content: {}".format(body_page))
+        print("\t- utf8 content: {}".format(body_decoded))
